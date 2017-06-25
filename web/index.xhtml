@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+    <title>My Clock</title>
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+</h:head>
+<h:body>
+    <h:outputStylesheet name="myclock.css" library="css"/>
+
+    <h:panelGroup styleClass="clock-area" layout="block">
+        <h:panelGroup styleClass="clock" layout="block">
+            <h:form id="form">
+                <h:outputText id="clock-display" styleClass="clock-display" value="#{dateTimeBean.getCurrentTime()}"/>
+                <p:poll interval="1" update="clock-display"/>
+            </h:form>
+        </h:panelGroup>
+    </h:panelGroup>
+
+    <h:outputLabel styleClass="message-area" value="Hello, It's The Time I'm Living On"/>
+</h:body>
+</html>
